@@ -1,18 +1,25 @@
-import './bootstrap.min.css'
+import "./bootstrap.min.css";
 // import './App.css';
 // after other import statements
 // import { BrowserRouter as Router } from 'react-router-dom';
-import { BrowserRouter as Router, Routes, Route, Link, Outlet, useParams } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link,
+  Outlet,
+  useParams,
+} from "react-router-dom";
 
 const BlogPosts = {
-  '1': {
-    title: 'First Blog Post',
-    description: 'Lorem ipsum dolor sit amet, consectetur adip.'
+  1: {
+    title: "First Blog Post",
+    description: "Lorem ipsum dolor sit amet, consectetur adip.",
   },
-  '2': {
-    title: 'Second Blog Post',
-    description: 'Hello React Router v6'
-  }
+  2: {
+    title: "Second Blog Post",
+    description: "Hello React Router v6",
+  },
 };
 
 function Posts() {
@@ -71,36 +78,53 @@ function About() {
 
 function App() {
   return (
-  <Router>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <div class="container-fluid">
-    <Link class="navbar-brand" to="#">Innovbot Cloud</Link>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarColor01">
-      <ul class="navbar-nav me-auto">
-        <li class="nav-item">
-          <Link class="nav-link active" to="/">Home
-            <span class="visually-hidden">(current)</span>
-          </Link>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
-        <li class="nav-item">
-          <Link class="nav-link" to="/about">About</Link>
-        </li>
-
-      </ul>
-
-    </div>
-  </div>
-</nav>
-      {/* <nav style={{ margin: 10 }}>
+    <Router>
+      {" "}
+      <main>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+          <div class="container-fluid">
+            <Link class="navbar-brand" to="#">
+              Innovbot Cloud
+            </Link>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarColor01"
+              aria-controls="navbarColor01"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarColor01">
+              <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                  <Link class="nav-link active" to="/">
+                    Home
+                    <span class="visually-hidden">(current)</span>
+                  </Link>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    Features
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/posts">
+                    Posts
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <Link class="nav-link" to="/about">
+                    About
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        {/* <nav style={{ margin: 10 }}>
     <Link to="/" style={{ padding: 5 }}>
       <button variant="primary">Home</button>
     </Link>
@@ -111,17 +135,19 @@ function App() {
       Posts
     </Link>
   </nav> */}
-  <main>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path='/about' element={<About />} />
-        <Route path="posts" element={<Posts />}>
-          <Route path="/" element={<PostLists />} />
-          <Route path=":slug" element={<Post />} />
-        </Route>
-      </Routes>
+
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="posts" element={<Posts />}>
+            <Route path="/" element={<PostLists />} />
+            <Route path=":slug" element={<Post />} />
+          </Route>
+        </Routes>
       </main>
-      <p className = "text-center" style={{ padding: 20 }}>Innovbot LLC &copy; 2023</p>
+      <p className="text-center" style={{ padding: 20 }}>
+        Innovbot LLC &copy; 2023
+      </p>
     </Router>
   );
 }
