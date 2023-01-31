@@ -10,6 +10,7 @@ import {
   Outlet,
   useParams,
 } from "react-router-dom";
+import React, { useState } from "react";
 
 const BlogPosts = {
   1: {
@@ -59,10 +60,17 @@ function PostLists() {
 }
 
 function Home() {
+  const [file, setFile] = useState();
+  function handleChange(e) {
+    console.log(e.target.files);
+    setFile(URL.createObjectURL(e.target.files[0]));
+  }
+
   return (
-    <div style={{ padding: 20 }}>
-      <h2>Home View</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adip.</p>
+    <div className="App">
+      <h2>Add Image:</h2>
+      <input type="file" onChange={handleChange} />
+      <img src={file} />
     </div>
   );
 }
