@@ -111,6 +111,7 @@ function App() {
       Posts
     </Link>
   </nav> */}
+  <main>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path='/about' element={<About />} />
@@ -119,6 +120,8 @@ function App() {
           <Route path=":slug" element={<Post />} />
         </Route>
       </Routes>
+      </main>
+      <p className = "text-center" style={{ padding: 20 }}>Innovbot LLC &copy; 2023</p>
     </Router>
   );
 }
