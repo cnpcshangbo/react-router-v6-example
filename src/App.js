@@ -1,4 +1,5 @@
-import './App.css';
+import './bootstrap.min.css'
+// import './App.css';
 // after other import statements
 // import { BrowserRouter as Router } from 'react-router-dom';
 import { BrowserRouter as Router, Routes, Route, Link, Outlet, useParams } from 'react-router-dom';
@@ -71,9 +72,37 @@ function About() {
 function App() {
   return (
   <Router>
-      <nav style={{ margin: 10 }}>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid">
+    <Link class="navbar-brand" to="#">Innovbot Cloud</Link>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <Link class="nav-link active" to="/">Home
+            <span class="visually-hidden">(current)</span>
+          </Link>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>
+        <li class="nav-item">
+          <Link class="nav-link" to="/about">About</Link>
+        </li>
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+      {/* <nav style={{ margin: 10 }}>
     <Link to="/" style={{ padding: 5 }}>
-      Home
+      <button variant="primary">Home</button>
     </Link>
     <Link to="/about" style={{ padding: 5 }}>
       About
@@ -81,7 +110,7 @@ function App() {
     <Link to="/posts" style={{ padding: 5 }}>
       Posts
     </Link>
-  </nav>
+  </nav> */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path='/about' element={<About />} />
