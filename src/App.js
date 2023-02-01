@@ -159,9 +159,9 @@ function App() {
                   </Link>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/posts">
+                  <Link class="nav-link" to="/posts">
                     Posts
-                  </a>
+                  </Link>
                 </li>
                 <li class="nav-item">
                   <Link class="nav-link" to="/about">
