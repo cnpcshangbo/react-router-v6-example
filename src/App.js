@@ -94,6 +94,21 @@ function SingleImage() {
     </div>
   );
 }
+function MultiImage() {
+  const [file, setFile] = useState();
+  function handleChange(e) {
+    console.log(e.target.files);
+    setFile(URL.createObjectURL(e.target.files[0]));
+  }
+
+  return (
+    <div className="App">
+      <h2>Add Images (under construction):</h2>
+      <input type="file" onChange={handleChange} />
+      <img src={file} />
+    </div>
+  );
+}
 
 function About() {
   return (
@@ -137,6 +152,11 @@ function App() {
                   <Link class="nav-link" to="/singleimage">
                     SingleImage
                   </Link>
+                </li>{" "}
+                <li class="nav-item">
+                  <Link class="nav-link" to="/multiimage">
+                    Multi-Images
+                  </Link>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="/posts">
@@ -167,6 +187,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/singleimage" element={<SingleImage />} />
+          <Route path="/multiimage" element={<MultiImage />} />
           <Route path="/about" element={<About />} />
           <Route path="posts" element={<Posts />}>
             <Route path="/" element={<PostLists />} />
