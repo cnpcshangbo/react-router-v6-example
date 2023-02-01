@@ -102,7 +102,13 @@ function MultiImage() {
   }
 
   return (
-    <div className="App">
+    <div className="App" style={{ padding: 20 }}>
+      <button class="btn btn-lg btn-primary" type="button">
+        
+        <a class="nav-link" href="http://localhost:3000/">
+                View Cloud Workspace
+                  </a>
+        </button>
       <h2>Add Images (under construction):</h2>
       <input type="file" onChange={handleChange} />
       <img src={file} />
