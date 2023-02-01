@@ -58,8 +58,28 @@ function PostLists() {
     </ul>
   );
 }
-
 function Home() {
+  return (
+    <div style={{ padding: 20 }}>
+      <h2>Innovbot Cloud Overview</h2>
+      <p>
+        This website provides tools for post-processing data captured by robot
+        from Innovbot LLC.{" "}
+      </p>
+      <p>Current functions:</p>
+      <p>
+        - SingleImage: Upload a single image for crack segmentation and check
+        the result.
+      </p>
+      <p>
+        - Multi-Images: Upload a folder of images for crack segmentation and
+        check the results.
+      </p>
+    </div>
+  );
+}
+
+function SingleImage() {
   const [file, setFile] = useState();
   function handleChange(e) {
     console.log(e.target.files);
@@ -114,9 +134,9 @@ function App() {
                   </Link>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">
-                    Features
-                  </a>
+                  <Link class="nav-link" to="/singleimage">
+                    SingleImage
+                  </Link>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="/posts">
@@ -146,6 +166,7 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/singleimage" element={<SingleImage />} />
           <Route path="/about" element={<About />} />
           <Route path="posts" element={<Posts />}>
             <Route path="/" element={<PostLists />} />
