@@ -103,15 +103,28 @@ function MultiImage() {
 
   return (
     <div className="App" style={{ padding: 20 }}>
-      <button class="btn btn-lg btn-primary" type="button">
+      <div class="d-grid gap-2">
+      <h3>View input and output images:</h3>
+      <button class="btn btn-lg btn-primary" type="button" style={{ padding: 20 }}>
         
         <a class="nav-link" href="http://localhost:3000/">
                 View Cloud Workspace
                   </a>
         </button>
-      <h2>Add Images (under construction):</h2>
+        <br></br>
+        <h3>Add new images:</h3>
+        <button class="btn btn-lg btn-primary" type="button" style={{ padding: 20 }}>
+        <a class="nav-link" href="http://localhost:8080/">Add a New Image</a>
+        </button>        
+        <br></br>
+        <h3>Processing new images:</h3>
+        <button class="btn btn-lg btn-primary" type="button" style={{ padding: 20 }}>
+        <a class="nav-link" href="http://localhost:8080/">Start Inferencing</a>
+        </button>
+        </div>
+      {/* <h2>Add Images (under construction):</h2>
       <input type="file" onChange={handleChange} />
-      <img src={file} />
+      <img src={file} /> */}
     </div>
   );
 }
