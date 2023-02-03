@@ -107,19 +107,19 @@ function MultiImage() {
       <h3>View input and output images:</h3>
       <button class="btn btn-lg btn-primary" type="button" style={{ padding: 20 }}>
         
-        <a class="nav-link" href="http://localhost:3000/">
+        <a class="nav-link" href="http://45.79.141.198:3000/">
                 View Cloud Workspace
                   </a>
         </button>
         <br></br>
         <h3>Add new images:</h3>
         <button class="btn btn-lg btn-primary" type="button" style={{ padding: 20 }}>
-        <a class="nav-link" href="http://localhost:8080/">Add a New Image</a>
+        <a class="nav-link" href="http://45.79.141.198:8080/">Add a New Image</a>
         </button>        
         <br></br>
         <h3>Processing new images:</h3>
         <button class="btn btn-lg btn-primary" type="button" style={{ padding: 20 }}>
-        <a class="nav-link" href="http://localhost:8080/">Start Inferencing</a>
+        <a class="nav-link" href="http://45.79.141.198:5000/run">Start Inferencing</a>
         </button>
         </div>
       {/* <h2>Add Images (under construction):</h2>
@@ -145,9 +145,9 @@ function App() {
       <main>
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
           <div class="container-fluid">
-            <Link class="navbar-brand" to="#">
+            <a class="navbar-brand" href="#">
               Innovbot Cloud
-            </Link>
+            </a>
             <button
               class="navbar-toggler"
               type="button"
