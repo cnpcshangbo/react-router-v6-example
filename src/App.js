@@ -1,4 +1,5 @@
 import "./bootstrap.min.css";
+import '../node_modules/video-react/dist/video-react.css'; // import css
 // import './App.css';
 // after other import statements
 // import { BrowserRouter as Router } from 'react-router-dom';
@@ -11,6 +12,7 @@ import {
   useParams,
 } from "react-router-dom";
 import React, { useState } from "react";
+import { Player } from 'video-react';
 
 const BlogPosts = {
   1: {
@@ -104,6 +106,9 @@ function MultiImage() {
   return (
     <div className="App" style={{ padding: 20 }}>
       <div class="d-grid gap-2">
+      <Player width="200">
+        <source src="http://localhost:3000/test_o.mp4" />
+      </Player>
       <h3>View input and output images:</h3>
       <button class="btn btn-lg btn-primary" type="button" style={{ padding: 20 }}>
         
