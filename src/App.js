@@ -13,6 +13,9 @@ import {
 } from "react-router-dom";
 import React, { useState } from "react";
 import { Player } from 'video-react';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 const BlogPosts = {
   1: {
@@ -106,9 +109,25 @@ function MultiImage() {
   return (
     <div className="App" style={{ padding: 20 }}>
       <div class="d-grid gap-2">
-      <Player width="200">
+      <Container>
+      <Row>
+        <Col>      
+        <Player width="200">
         <source src="http://localhost:3000/test_o.mp4" />
       </Player>
+      </Col>
+        <Col>      
+        <Player width="200">
+        <source src="http://localhost:3000/test_o.mp4" />
+      </Player>
+      </Col>
+      </Row>
+      <Row>
+        <Col>Input images</Col>
+        <Col>Output images</Col>
+      </Row>
+    </Container>
+
       <h3>View input and output images:</h3>
       <button class="btn btn-lg btn-primary" type="button" style={{ padding: 20 }}>
         
