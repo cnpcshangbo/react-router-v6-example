@@ -113,12 +113,12 @@ function MultiImage() {
       <Row>
         <Col>      
         <Player width="200">
-        <source src="http://localhost:3000/test_o.mp4" />
+        <source src="https://innovvideos.s3.amazonaws.com/test_o.mp4" />
       </Player>
       </Col>
         <Col>      
         <Player width="200">
-        <source src="http://localhost:3000/test_o.mp4" />
+        <source src="https://innovvideos.s3.amazonaws.com/test_o.mp4" />
       </Player>
       </Col>
       </Row>
