@@ -233,7 +233,7 @@ function App() {
           <Route path="/multiimage" element={<MultiImage />} />
           <Route path="/about" element={<About />} />
           <Route path="posts" element={<Posts />}>
-            <Route path="/" element={<PostLists />} />
+            <Route index element={<PostLists />} />
             <Route path=":slug" element={<Post />} />
           </Route>
         </Routes>
